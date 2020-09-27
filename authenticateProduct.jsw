@@ -2,22 +2,7 @@ import {fetch} from 'wix-fetch';
 
 export function product(productID){
 	const url = 'https://hzh1a3tno4.execute-api.ap-south-1.amazonaws.com/prod';
-	let fullUrl = url + productID + '&appid='  + '&units=imperial';
+	let fullUrl = url + productID; //+ '&appid='  + '&units=imperial'
 	return fetch(fullUrl, {method: 'get'})
-    .then(response => response.json())
-    .then(json => json.main.temp);
-	// return fetch( "AWS_API",{
-	// 	"method":"get",
-	// 	"headers":{"Content-Type": "application/json"},
-	// })
+    	.then(response => response.json())
 }
-
-// .then(function(response) {
-// console.log("addContact.jsw: "+response);Home (All)
-// let result = response.text();
-// console.log(result);
-// if (result.errorrMessage === undefined)
-// {return result;}
-// else
-// {throw new Error(response.errorMessage);}
-// });}
